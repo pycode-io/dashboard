@@ -38,21 +38,21 @@
                 <div class="d-flex">
                     <!-- LOGO -->
                     <div class="navbar-brand-box">
-                        <a href="{{ route('dashboard') }}" class="logo logo-dark">
+                        <a href="{{ route('admin.dashboard') }}" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img src="{{ asset('assets/images/favicon.ico') }}" height="22" alt="logo" class="logo logo-admin">
+                                <img src="{{asset('assets/images/logo.svg')}}" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ asset('assets/images/favicon.ico') }}" height="18" alt="logo" class="logo logo-admin">
+                                <img src="{{asset('assets/images/logo-dark.png')}}" alt="" height="17">
                             </span>
                         </a>
 
                         <a href="{{ route('admin.dashboard') }}" class="logo logo-light">
                             <span class="logo-sm">
-                                <img src="{{ asset('assets/images/favicon.ico') }}" height="22" alt="logo">
+                                <img src="{{asset('assets/images/logo-sm.png')}}" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="{{ asset('assets/images/logo.jpeg') }}" height="60" alt="logo">
+                                <img src="{{asset('assets/images/logo-light.png')}}" alt="" height="18">
                             </span>
                         </a>
                     </div>

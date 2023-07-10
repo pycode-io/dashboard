@@ -12,9 +12,9 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <div class="page-title-box">
+                            <h4 class="font-size-18">Dashboard</h4>
                             <ol class="breadcrumb mb-0">
-                                <h3 class="breadcrumb-item active text-dark">Welcome  {{ Auth::guard('admin')->user()->name }}
-                                </h3>
+                                <li class="breadcrumb-item active">Welcome to Admin Dashboard</li>
                             </ol>
                         </div>
                     </div>
@@ -35,12 +35,12 @@
                                     <h4 class="font-weight-medium font-size-24">50<i
                                         class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
-                                <div class="p-1" style="background-color: #B30008">
+                                <div class="pt-2">
                                     <div class="float-right">
-                                        <i class="mdi mdi-arrow-right h5"></i>
+                                        <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                                     </div>
 
-                                    <p class="text-white mb-0 mt-1">Since last month</p>
+                                    <p class="text-white-50 mb-0 mt-1">Since last month</p>
                                 </div>
                             </div>
                         </a>
@@ -60,12 +60,12 @@
                                     <h4 class="font-weight-medium font-size-24">20 <i
                                             class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
-                                <div class="p-1" style="background-color: #B30008">
+                                <div class="pt-2">
                                     <div class="float-right">
-                                        <i class="mdi mdi-arrow-right"></i>
+                                        <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                                     </div>
 
-                                    <p class="text-white mb-0 mt-1">Since last month</p>
+                                    <p class="text-white-50 mb-0 mt-1">Since last month</p>
                                 </div>
                             </div>
                         </a>
@@ -84,12 +84,12 @@
                                     <h4 class="font-weight-medium font-size-24">15 <i
                                             class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
-                                <div class="p-1" style="background-color: #B30008">
+                                <div class="pt-2">
                                     <div class="float-right">
-                                        <i class="mdi mdi-arrow-right h5"></i>
+                                        <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                                     </div>
 
-                                    <p class="text-white mb-0 mt-1">Since last month</p>
+                                    <p class="text-white-50 mb-0 mt-1">Since last month</p>
                                 </div>
                             </div>
                         </a>
@@ -107,12 +107,12 @@
                                     <h4 class="font-weight-medium font-size-24">20 <i
                                             class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
-                                <div class="p-1" style="background-color: #B30008">
+                                <div class="pt-2">
                                     <div class="float-right">
-                                        <i class="mdi mdi-arrow-right h5"></i>
+                                        <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                                     </div>
 
-                                    <p class="text-white mb-0 mt-1">Since last month</p>
+                                    <p class="text-white-50 mb-0 mt-1">Since last month</p>
                                 </div>
                             </div>
                         </a>
@@ -131,12 +131,12 @@
                                     <h4 class="font-weight-medium font-size-24">20 <i
                                             class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
-                                <div class="p-1" style="background-color: #B30008">
+                                <div class="pt-2">
                                     <div class="float-right">
-                                        <i class="mdi mdi-arrow-right h5"></i>
+                                        <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                                     </div>
 
-                                    <p class="text-white mb-0 mt-1">Since last month</p>
+                                    <p class="text-white-50 mb-0 mt-1">Since last month</p>
                                 </div>
                             </div>
                         </a>
@@ -156,12 +156,12 @@
                                     <h4 class="font-weight-medium font-size-24">20 <i
                                             class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
-                                <div class="p-1" style="background-color: #B30008">
+                                <div class="pt-2">
                                     <div class="float-right">
-                                        <i class="mdi mdi-arrow-right h5"></i>
+                                        <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                                     </div>
 
-                                    <p class="text-white mb-0 mt-1">Since last month</p>
+                                    <p class="text-white-50 mb-0 mt-1">Since last month</p>
                                 </div>
                             </div>
                         </a>
@@ -181,12 +181,12 @@
                                     <h4 class="font-weight-medium font-size-24">20 <i
                                             class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
-                                <div class="p-1" style="background-color: #B30008">
+                                <div class="pt-2">
                                     <div class="float-right">
-                                        <i class="mdi mdi-arrow-right h5"></i></a>
+                                        <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                                     </div>
 
-                                    <p class="text-white mb-0 mt-1">Since last month</p>
+                                    <p class="text-white-50 mb-0 mt-1">Since last month</p>
                                 </div>
                             </div>
                         </a>
@@ -206,12 +206,12 @@
                                     <h4 class="font-weight-medium font-size-24 text-white">20 <i
                                             class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
-                                <div class="p-1" style="background-color: #B30008">
+                                <div class="pt-2">
                                     <div class="float-right">
-                                        <a href="#" class="text-white"><i class="mdi mdi-arrow-right"></i>
+                                        <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
                                     </div>
 
-                                    <p class="text-white mb-0 mt-1">Since last month</p>
+                                    <p class="text-white-50 mb-0 mt-1">Since last month</p>
                                 </div>
                             </div>
                         </a>
