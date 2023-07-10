@@ -25,7 +25,7 @@
 
                     <div class="col-xl-3 col-md-6">
                         <div class="card mini-stat bg-primary text-white">
-                            <a href="{{route('admin.users.index')}}" class="text-white">
+                            <a href="{{route('users.index')}}" class="text-white">
                             <div class="card-body">
                                 <div class="mb-4">
                                     <div class="float-left mini-stat-img mr-4">
@@ -121,7 +121,7 @@
 
                     <div class="col-xl-3 col-md-6">
                         <div class="card mini-stat bg-primary text-white">
-                            <a href="{{route('admin.banners.index')}}" class="text-white">
+                            <a href="{{route('banners.index')}}" class="text-white">
                             <div class="card-body">
                                 <div class="mb-4">
                                     <div class="float-left mini-stat-img mr-4">
@@ -171,7 +171,7 @@
 
                     <div class="col-xl-3 col-md-6">
                         <div class="card mini-stat bg-primary text-white">
-                            <a href="{{route('admin.advertisements.index')}}" class="text-white">
+                            <a href="#" class="text-white">
                             <div class="card-body">
                                 <div class="mb-4">
                                     <div class="float-left mini-stat-img mr-4">

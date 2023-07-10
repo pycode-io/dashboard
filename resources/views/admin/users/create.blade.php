@@ -24,7 +24,7 @@
                     <div class="col-sm-6">
                         <div class="float-right d-none d-md-block">
                             <div class="dropdown">
-                                <a href="{{ route('admin.users.index') }}">
+                                <a href="{{ route('users.index') }}">
                                     <button class="btn btn-primary" type="button" aria-expanded="false">
                                         Back
                                     </button>
@@ -51,7 +51,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form class="custom-validation" action="{{ route('admin.user.store') }}" method="post" enctype="multipart/form-data" >
+                                <form class="custom-validation" action="{{ route('user.store') }}" method="post" enctype="multipart/form-data" >
                                     @csrf
 
                                     <div class="form-group row">

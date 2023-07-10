@@ -22,7 +22,7 @@
 
                     <div class="col-sm-6">
                         <div class="float-right d-none d-md-block">
-                            <a href="{{ route('admin.banners.index') }}">
+                            <a href="{{ route('banners.index') }}">
                                 <button class="btn btn-primary" type="button" aria-expanded="false">
                                     Back
                                 </button>
@@ -37,7 +37,7 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form class="custom-validation" action="{{ route('admin.banner.store') }}" method="POST"
+                                <form class="custom-validation" action="{{ route('banner.store') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
                                     @if (isset($edit_banner))

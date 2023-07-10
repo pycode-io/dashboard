@@ -17,34 +17,21 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('admin.users.index') }}" class=" waves-effect">
+                    <a href="{{ route('users.index') }}" class=" waves-effect">
                         <i class="ti-user"></i>
                         <span>Users Details</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('admin.banners.index') }}" class=" waves-effect">
+                    <a href="{{ route('banners.index') }}" class=" waves-effect">
                         <i class="far fa-image"></i>
                         <span>Banner Images</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{ route('admin.advertisements.index') }}" class=" waves-effect">
-                        <i class="fas fa-ad"></i>
-                        <span>Advertisement</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{ route('admin.languages.index') }}" class=" waves-effect">
-                        <i class='fas fa-language'></i>
-                        <span>Language Details</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('admin.employee.index') }}" class=" waves-effect">
+                    <a href="{{ route('employee.index') }}" class=" waves-effect">
                         <i class='fas fa-users'></i>
                         <span>Employee Details</span>
                     </a>

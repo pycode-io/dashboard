@@ -22,7 +22,7 @@
                     <div class="col-sm-6">
                         <div class="float-right d-none d-md-block">
                             <div class="dropdown">
-                                <a href="{{ route('admin.users.index') }}">
+                                <a href="{{ route('users.index') }}">
                                     <button class="btn btn-primary" type="button" aria-expanded="false">
                                         Back
                                     </button>

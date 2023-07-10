@@ -24,7 +24,7 @@
                             <div class="col-sm-6">
                                 <div class="float-right d-none d-md-block">
                                     <div class="dropdown">
-                                        <a href="{{route('admin.banner.create')}}">
+                                        <a href="{{route('banner.create')}}">
                                             <button class="btn btn-primary" type="button" aria-expanded="false">Add Banner
                                             </button>
                                         </a>
@@ -35,13 +35,13 @@
 
                         <div class="row">
                             <div class="col-xl-12">
-                                <form action="{{ route('admin.banners.search') }}" method="GET">
+                                <form action="{{ route('banners.search') }}" method="GET">
                                     <div class="col-md-3 mt-1 float-left ">
                                         <input type="text" class="form-control" name="search" placeholder="Search..." />
                                     </div>
                                     <div class="float-left m-1">
                                         <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">Submit</button>
-                                        <a class="m-1" href="{{route('admin.banners.index')}}"><button type="button" class="btn btn-primary waves-effect waves-light mr-1"
+                                        <a class="m-1" href="{{route('banners.index')}}"><button type="button" class="btn btn-primary waves-effect waves-light mr-1"
                                             data-toggle="tooltip" data-placement="top" title=""
                                            data-original-title="Clear Search Filters">
                                            <i class="mdi mdi-refresh"></i>Reset
