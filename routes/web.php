@@ -69,32 +69,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('/employee/delete/{id}', 'EmployeeController@delete')->name('employee.delete');
         Route::get('/employee/status/update', 'EmployeeController@updateStatus')->name('employee.change.status');
 
-        //Talent Routes
-        Route::get('/talents', 'TalentController@index')->name('talents.index');
-        Route::get('/talents/search', 'TalentController@index')->name('talents.search');
-        Route::get('/talents/view/{id}', 'TalentController@show_talents')->name('talents.view');
-        Route::get('/talents/status/update', 'TalentController@updateStatus')->name('talents.change.status');
-        Route::get('/talents/comments/{id}', 'TalentController@show_comments')->name('talents.comments');
-
-        //Deleted Talent videos Opertation
-        Route::get('/deletes/talents', 'TalentController@deleted_records')->name('talents.archive');
-        Route::get('/talents/restore/{id}', 'TalentController@restore')->name('talents.restore');
-        Route::get('/talents/permanents/delete/{id}', 'TalentController@delete_permanent')->name('talents.permanents_delete');
-
-
-        //TalentHunt Subscriptions Routes
-        Route::get('/talents/subscription', 'TalentHuntSubscriptions@index')->name('talents.subscriptions');
-        Route::get('/talents/subscription/invoice/{id}', 'TalentHuntSubscriptions@invoice')->name('talents.subscriptions.invoice');
-        Route::get('/talents/subscription/show/{id}', 'TalentHuntSubscriptions@showTalentSubscription')->name('talents.subscriptions.show');
-        Route::get('/talents/subscription/search', 'TalentHuntSubscriptions@index')->name('talents.subscription.search');
-
-        //Talent Subscriptions Plans Controllers
-        Route::get('/talent/plan', 'TalentPlanController@index')->name('talents.plan.index');
-        Route::get('/talent/plan/search', 'TalentPlanController@index')->name('talents.plan.search');
-        Route::get('/talent/plan/create', 'TalentPlanController@create')->name('talent.plan.create');
-        Route::post('/talent/plan/store', 'TalentPlanController@store')->name('talent.plan.store');
-        Route::get('/talent/plan/edit/{id}', 'TalentPlanController@edit')->name('talent.plan.edit');
-        Route::get('/talent/plan/delete/{id}', 'TalentPlanController@destroy')->name('talent.plan.delete');
 
         //Admin Banner Routes
         Route::get('/banners', 'BannerController@index')->name('banners.index');
@@ -104,28 +78,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('/banner/edit/{id}', 'BannerController@edit')->name('banner.edit');
         Route::get('/banner/delete/{id}', 'BannerController@delete')->name('banner.delete');
 
-        //Admin Movies Routes
-        Route::get('/movies', 'MoviesController@index')->name('movies.index');
-        Route::get('/movies/search', 'MoviesController@index')->name('search.movies');
-        Route::get('/movies/between-dates', 'MoviesController@getDataBetweenDates')->name('movies.between-dates');
-        Route::get('/movies/create', 'MoviesController@create')->name('movies.create');
-        Route::post('/movies/store', 'MoviesController@store')->name('movies.store');
-        Route::get('/movies/edit/{id}', 'MoviesController@edit')->name('movies.edit');
-        Route::post('/movies/edit/store', 'MoviesController@update')->name('movies.edit.store');
-        Route::get('/movies/view/{id}', 'MoviesController@show')->name('movies.show');
-        Route::get('/movies/delete/{id}', 'MoviesController@delete')->name('movies.delete');
-        Route::get('/movies/status/update', 'MoviesController@updateStatus')->name('movies.change.status');
-
-        Route::get('/deletes/movies', 'MoviesController@deleted_movies')->name('movies.archive');
-        Route::get('/movies/restore/{id}', 'MoviesController@restore')->name('movies.restore');
-        Route::get('/movies/permanents/delete/{id}', 'MoviesController@permanents_delete')->name('movies.permanents_delete');
-        //Admin Genre Routes
-        Route::get('/genres', 'GenreController@index')->name('genres.index');
-        Route::get('/genres/search', 'GenreController@index')->name('genres.search');
-        Route::get('/genre/create', 'GenreController@create')->name('genre.create');
-        Route::post('/genre/store', 'GenreController@store')->name('genre.store');
-        Route::get('/genre/edit/{id}', 'GenreController@edit')->name('genre.edit');
-        Route::get('/genre/delete/{id}', 'GenreController@delete')->name('genre.delete');
+       
 
         //Admin Advertisement Routes
         Route::get('/advertisements', 'AdvertisementController@index')->name('advertisements.index');
@@ -135,9 +88,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('/advertisement/edit/{id}', 'AdvertisementController@edit')->name('advertisement.edit');
         Route::get('/advertisement/delete/{id}', 'AdvertisementController@delete')->name('advertisement.delete');
 
-        //Orders Routes
-        Route::get('/orders','OrdersController@showOrders')->name('orders.index');
-        Route::get('/orders/details/{id}','OrdersController@showOrderDetails')->name('orders.details');
 
         //subscriptions Routes
         Route::get('/subscriptions','SubscriptionController@index')->name('subscriptions.index');
@@ -150,13 +100,6 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
         Route::get('/subscription/permanents/delete/{id}', 'SubscriptionController@delete_permanent')->name('subscription.permanents_delete');
 
 
-        //Movies plans Routes
-        Route::get('/movies/plans','MoviePlansController@index')->name('plans.index');
-        Route::get('/movies/search','MoviePlansController@index')->name('plans.search');
-        Route::get('/plans/create', 'MoviePlansController@create')->name('plans.create');
-        Route::post('/plans/store', 'MoviePlansController@store')->name('plans.store');
-        Route::get('/plans/edit/{id}', 'MoviePlansController@edit')->name('plans.edit');
-        Route::get('/plans/delete/{id}', 'MoviePlansController@delete')->name('plans.delete');
 
     });
     

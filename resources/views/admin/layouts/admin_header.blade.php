@@ -24,29 +24,6 @@
     <!-- App Css-->
     <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" />
 
-    <style>
-        .navbar-brand-box {
-            background: #07133d !important;
-        }
-
-        .vertical-menu {
-            background: #07133d !important;
-        }
-
-        .bg-primary {
-            background-color: #07133d!important;
-        }
-        #sidebar-menu ul li a {
-            color: #ffffff!important;
-        }
-        .mm-active .active i {
-            color: #ffffff!important;
-        }
-        #sidebar-menu ul li a i {
-            color: #ffffff!important;
-        }
-    </style>
-
 </head>
 
 <body data-sidebar="dark">

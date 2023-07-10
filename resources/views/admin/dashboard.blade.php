@@ -50,7 +50,7 @@
                     
                     <div class="col-xl-3 col-md-6">
                         <div class="card mini-stat bg-primary text-white">
-                            <a href="{{route('admin.subscriptions.index')}}" class="text-white">
+                            <a href="#" class="text-white">
                             <div class="card-body">
                                 <div class="mb-4">
                                     <div class="float-left mini-stat-img mr-4">
@@ -74,7 +74,7 @@
                     
                     <div class="col-xl-3 col-md-6">
                         <div class="card mini-stat bg-primary text-white">
-                            <a href="{{route('admin.movies.index')}}" class="text-white">
+                            <a href="#" class="text-white">
                             <div class="card-body">
                                 <div class="mb-4">
                                     <div class="float-left mini-stat-img mr-4">
@@ -97,13 +97,13 @@
                     </div>
                     <div class="col-xl-3 col-md-6">
                         <div class="card mini-stat bg-primary text-white">
-                            <a href="{{route('admin.genres.index')}}" class="text-white">
+                            <a href="#" class="text-white">
                             <div class="card-body">
                                 <div class="mb-4">
                                     <div class="float-left mini-stat-img mr-4">
                                         <img src="{{ asset('assets/images/services-icon/04.png') }}" alt="">
                                     </div>
-                                    <h5 class="font-size-16 text-uppercase mt-0 text-white">Genre</h5>
+                                    <h5 class="font-size-16 text-uppercase mt-0 text-white">Testing</h5>
                                     <h4 class="font-weight-medium font-size-24">20 <i
                                             class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
@@ -146,7 +146,7 @@
 
                     <div class="col-xl-3 col-md-6">
                         <div class="card mini-stat bg-primary text-white">
-                            <a href="{{route('admin.languages.index')}}" class="text-white">
+                            <a href="#" class="text-white">
                             <div class="card-body">
                                 <div class="mb-4">
                                     <div class="float-left mini-stat-img mr-4">
@@ -196,19 +196,19 @@
 
                     <div class="col-xl-3 col-md-6">
                         <div class="card mini-stat bg-primary text-white">
-                            <a href="{{route('admin.talents.index')}}" class="text-white">
+                            <a href="#" class="text-white">
                             <div class="card-body">
                                 <div class="mb-4">
                                     <div class="float-left mini-stat-img mr-4">
                                         <img src="{{ asset('assets/images/services-icon/04.png') }}" alt="">
                                     </div>
-                                    <h5 class="font-size-16 text-uppercase mt-0 text-white">Talents</h5>
+                                    <h5 class="font-size-16 text-uppercase mt-0 text-white">testing</h5>
                                     <h4 class="font-weight-medium font-size-24 text-white">20 <i
                                             class="mdi mdi-arrow-up text-success ml-2"></i></h4>
                                 </div>
                                 <div class="p-1" style="background-color: #B30008">
                                     <div class="float-right">
-                                        <a href="{{route('admin.talents.index')}}" class="text-white"><i class="mdi mdi-arrow-right"></i>
+                                        <a href="#" class="text-white"><i class="mdi mdi-arrow-right"></i>
                                     </div>
 
                                     <p class="text-white mb-0 mt-1">Since last month</p>
