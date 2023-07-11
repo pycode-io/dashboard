@@ -15,9 +15,9 @@
 <!-- END layout-wrapper -->
 
 <!-- JAVASCRIPT -->
-<script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
-<script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/js/metisMenu.min.js')}}"></script>
 {{-- multiselect form --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
