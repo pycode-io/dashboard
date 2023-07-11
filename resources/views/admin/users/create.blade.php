@@ -51,14 +51,15 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form class="custom-validation" action="{{ route('user.store') }}" method="post" enctype="multipart/form-data" >
+                                <form class="custom-validation" action="{{ route('users.store') }}" method="post"
+                                    enctype="multipart/form-data">
                                     @csrf
 
                                     <div class="form-group row">
                                         <label for="name" class="col-sm-2 col-form-label">Name :</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="name" name="name"
-                                                required placeholder="Enter Name"/>
+                                                required placeholder="Enter Name" />
                                         </div>
                                     </div>
 
@@ -66,7 +67,7 @@
                                         <label for="email" class="col-sm-2 col-form-label">Email :</label>
                                         <div class="col-sm-10">
                                             <input type="email" class="form-control" id="email" name="email"
-                                                required placeholder="Enter Email"/>
+                                                required placeholder="Enter Email" />
                                         </div>
                                     </div>
 
@@ -75,14 +76,15 @@
                                             :</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="phone" name="phone"
-                                                required placeholder="Enter Phone Number"/>
+                                                required placeholder="Enter Phone Number" />
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
                                         <label for="password" class="col-sm-2 col-form-label">Password :</label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required />
+                                            <input type="password" class="form-control" id="password" name="password"
+                                                placeholder="Enter Password" required />
                                         </div>
                                     </div>
 
@@ -107,7 +109,7 @@
                                         <label for="address" class="col-sm-2 col-form-label">Address :</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="address" name="address"
-                                                required placeholder="Enter Address"/>
+                                                required placeholder="Enter Address" />
                                         </div>
                                     </div>
 
@@ -115,7 +117,7 @@
                                         <label for="pincode" class="col-sm-2 col-form-label">Pincode :</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="pincode" name="pincode"
-                                                required placeholder="Enter Pincode"/>
+                                                required placeholder="Enter Pincode" />
                                         </div>
                                     </div>
 
@@ -136,45 +138,6 @@
                                                 <option value="">Select</option>
                                                 <option value="Active">Active</option>
                                                 <option value="InActive">InActive</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="language_1" class="col-sm-2 col-form-label">Language1 :</label>
-                                        <div class="col-sm-10">
-                                            <select name="language_1" id="language_1" class="form-control"  required>
-                                                <option value="1">Hindi</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="language_2" class="col-sm-2 col-form-label">Language2 :</label>
-                                        <div class="col-sm-10">
-                                            <select  class="selectpicker  multiple form-control"
-                                            data-max-options="1"  data-live-search="true" name="language_2">
-                                                <option value="">select</option>
-                                                @foreach ($language as $item)
-                                                    <option value="{{ $item->id }}">
-                                                        {{ $item->language }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="language_3" class="col-sm-2 col-form-label">Language3 :</label>
-                                        <div class="col-sm-10">
-                                            <select  class="selectpicker  multiple form-control"
-                                            data-max-options="1"  data-live-search="true" name="language_3">
-                                                <option value="">select</option>
-                                                @foreach ($language as $item)
-                                                    <option value="{{ $item->id }}">
-                                                        {{ $item->language }}
-                                                    </option>
-                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

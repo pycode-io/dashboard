@@ -36,22 +36,17 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
 
         Route::get('/dashboard', 'Homecontroller@index')->name('admin.dashboard');
         Route::get('logout', 'AuthenticateController@destroy')->name('admin.logout');
-
+        
+        //User Routes 
         Route::get('/users', 'UsersController@index')->name('users.index');
-        Route::get('/user/create', 'UsersController@create')->name('user.create');
-        Route::post('/user/store', 'UsersController@store')->name('user.store');
-        Route::get('/user/edit/{id}', 'UsersController@edit')->name('user.edit');
-        Route::post('/user/edit/store', 'UsersController@update')->name('user.edit.store');
-
-        Route::post('/users/{id}/delete', 'UsersController@deleteUser')->name('users.delete');
-        Route::delete('/users/{id}', 'UsersController@destroy')->name('users.destroy');
-
-        Route::get('/user/show/{id}', 'UsersController@show')->name('user.show');
-        Route::get('/user/status/update', 'UsersController@updateStatus')->name('user.change.status');
-        //Deleted users Opertation
-        Route::get('/deletes/users', 'UsersController@deleted_users')->name('users.archive');
-        Route::get('/users/restore/{id}', 'UsersController@restore')->name('users.restore');
-        Route::get('/users/permanents/delete/{id}', 'UsersController@delete_permanent')->name('users.permanents_delete');
+        Route::get('/users/create', 'UsersController@create')->name('users.create');
+        Route::post('/users/store', 'UsersController@store')->name('users.store');
+        Route::get('/users/edit/{id}', 'UsersController@edit')->name('users.edit');
+        Route::post('/users/update/{id}', 'UsersController@update')->name('users.update');
+        Route::get('/users/show/{id}', 'UsersController@show')->name('users.show');
+        Route::get('/users/delete/{id}', 'UsersController@destroy')->name('users.delete');
+        Route::get('/user/status/update', 'UsersController@updateStatus')->name('users.change.status');
+       
 
          //Admin Banner Routes
          Route::get('/banners', 'BannerController@index')->name('banners.index');

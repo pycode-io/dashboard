@@ -29,7 +29,7 @@
                                 <a class="btn btn-primary waves-effect waves-light" href="{{ route('admin.dashboard') }}">
                                     <i class="ion ion-md-add-arrow"></i> Back
                                 </a>
-                                <a class="btn btn-primary waves-effect waves-light" href="{{ route('user.create') }}">
+                                <a class="btn btn-primary waves-effect waves-light" href="{{ route('users.create') }}">
                                     <i class="ion ion-md-add-circle-outline"></i> Add
                                 </a>
                             </div>
@@ -101,17 +101,12 @@
                                                     <input type="checkbox" data-id="{{ $user->id }}" name="status" class="js-switch" {{ $user->status == 'Active' ? 'checked' : '' }}>
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-success">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
+                                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success"><i class="fa fa-edit"></i></a>
                 
-                                                   
-                                                    <button class="btn btn-danger delete-user-btn " data-id="{{ $user->id }}"><i class="fa fa-trash"></i></button>
+                                                    <a href="{{ route('users.delete', $user->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 
-                                                    <a href="{{route('user.show', $user->id) }}" 
-                                                        class="btn btn-primary">
-                                                        <i class="fa fa-eye"></i>
-                                                    </a>
+                                                    <a href="{{route('users.show', $user->id) }}" 
+                                                     class="btn btn-primary"><i class="fa fa-eye"></i></a>
                                                 </td>
                                                 <?php $i++; ?>
                 
@@ -175,7 +170,7 @@
                 $.ajax({
                     type: "GET",
                     dataType: "json",
-                    url: '{{ route('user.change.status') }}',
+                    url: '{{ route('users.change.status') }}',
                     data: {'status': status, 'id': Id },
                     success: function(data) {
                         toastr.options.closeButton = true;

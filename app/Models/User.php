@@ -20,8 +20,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'address', 'city', 'state', 'pincode', 'latitude',
-        'lognitute', 'profile_image', 'status', 'device_name', 'device_imei', 'installed_date', 'language',
+        'name', 'email', 'password', 'phone', 'address', 'city', 'state', 'pincode','profile_image', 'status'
     ];
 
     /**
@@ -43,9 +42,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
-    public function subscriptions()
-    {
-        return $this->hasMany(Subscription::class);
-    }
 }

@@ -50,18 +50,15 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <form class="custom-validation" action="{{ route('user.edit.store') }}" method="post" enctype="multipart/form-data">
+                                <form class="custom-validation" action="{{ route('users.update',$user_edit->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
-                                    @if (isset($edit_users))
-                                        <input hidden value="{{ $edit_users->id }}" name="user_id" />
-                                    @endif
 
                                     <div class="form-group row">
                                         <label for="name" class="col-sm-2 col-form-label">Name :</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="name" name="name"
                                                 required placeholder="Enter Name"
-                                                value="{{$edit_users->name}}" />
+                                                value="{{$user_edit->name}}" />
                                         </div>
                                     </div>
 
@@ -70,7 +67,7 @@
                                         <div class="col-sm-10">
                                             <input type="email" class="form-control" id="email" name="email"
                                                 required placeholder="Enter Email"
-                                                value="{{$edit_users->email}}" />
+                                                value="{{$user_edit->email}}" />
                                         </div>
                                     </div>
 
@@ -80,7 +77,7 @@
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="phone" name="phone"
                                                 required placeholder="Enter Phone Number"
-                                                value="{{$edit_users->phone}}" />
+                                                value="{{$user_edit->phone}}" />
                                         </div>
                                     </div>
 
@@ -89,7 +86,7 @@
                                         <div class="col-sm-10">
                                             <input type="password" class="form-control" id="password" name="password"
                                                 required placeholder="Enter Password"
-                                                value="{{ $edit_users->password }}" />
+                                                value="{{ $user_edit->password }}" />
                                         </div>
                                     </div>
 
@@ -98,7 +95,7 @@
                                         <label for="city" class="col-sm-2 col-form-label">City :</label>
                                         <div class="col-sm-10">
                                             <input type="text" id="city" class="form-control" name="city"
-                                                value="{{$edit_users->city}}"
+                                                value="{{$user_edit->city}}"
                                                 placeholder="Enter City Name">
                                         </div>
                                     </div>
@@ -107,7 +104,7 @@
                                         <label for="state" class="col-sm-2 col-form-label">State :</label>
                                         <div class="col-sm-10">
                                             <input type="text" id="state" class="form-control" name="state"
-                                                value="{{ $edit_users->state }}"
+                                                value="{{ $user_edit->state }}"
                                                 placeholder="Enter State Name">
                                         </div>
                                     </div>
@@ -117,7 +114,7 @@
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="address" name="address"
                                                 required placeholder="Enter Address"
-                                                value="{{ $edit_users->address}}" />
+                                                value="{{ $user_edit->address}}" />
                                         </div>
                                     </div>
 
@@ -126,7 +123,7 @@
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="pincode" name="pincode"
                                                 required placeholder="Enter Pincode"
-                                                value="{{ $edit_users->pincode }}" />
+                                                value="{{ $user_edit->pincode }}" />
                                         </div>
                                     </div>
 
@@ -134,10 +131,10 @@
                                         <label for="profile_image" class="col-sm-2 col-form-label">Profile Image :</label>
                                         <div class="col-sm-10">
                                             <input type="file" class="form-control" id="profile_image"
-                                                name="profile_image" value="{{ $edit_users->profile_image }}" />
+                                                name="profile_image" value="{{ $user_edit->profile_image }}" />
 
                                                 <!-- Show the image box -->
-                                                <img src="{{asset('storage/users/'.$edit_users->profile_image)}}" alt="image" width="50" height="50">
+                                                <img src="{{asset('storage/users/'.$user_edit->profile_image)}}" alt="image" width="50" height="50">
                                                 
                                         </div>
                                     </div> --}}
@@ -150,50 +147,10 @@
                                             <select name="status" id="status" class="form-control" required>
                                                 <option value="">Select</option>
 
-                                                <option value="Active"{{ $edit_users->status == 'Active' ? 'selected' : ''}}> Active</option>
+                                                <option value="Active"{{ $user_edit->status == 'Active' ? 'selected' : ''}}> Active</option>
 
-                                                <option value="InActive" {{ $edit_users->status == 'InActive' ? 'selected' : '' }}> InActive</option>
+                                                <option value="InActive" {{ $user_edit->status == 'InActive' ? 'selected' : '' }}> InActive</option>
 
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="language_1" class="col-sm-2 col-form-label">Language1 :</label>
-                                        <div class="col-sm-10">
-                                            <select name="language_1" id="language_1" class="form-control"  required>
-                                                <option value="1">Hindi</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="language_2" class="col-sm-2 col-form-label">Language2 :</label>
-                                        <div class="col-sm-10">
-                                            <select  class="selectpicker  multiple form-control"
-                                            data-max-options="1"  data-live-search="true" name="language_2">
-                                            @foreach ($language as $item)
-                                            <option
-                                                {{ isset($edit_users) ? ($edit_users->language_2 == $item->id ? 'selected' : '') : '' }}
-                                                value="{{ $item->id }}">{{ $item->language }}</option>
-                                        
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label for="language_3" class="col-sm-2 col-form-label">Language3 :</label>
-                                        <div class="col-sm-10">
-                                            <select  class="selectpicker  multiple form-control"
-                                            data-max-options="1"  data-live-search="true" name="language_3">
-                                                <option value="">select</option>
-                                                @foreach ($language as $item)
-                                            <option
-                                                {{ isset($edit_users) ? ($edit_users->language_3 == $item->id ? 'selected' : '') : '' }}
-                                                value="{{ $item->id }}">{{ $item->language }}</option>
-                                        
-                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

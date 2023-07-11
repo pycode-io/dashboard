@@ -25,7 +25,7 @@
                         <div class="col-sm-6">
                             <div class="float-right d-none d-md-block">
                                 <div class="dropdown">
-                                    <a href="{{ route('admin.employee.create') }}">
+                                    <a href="{{ route('employee.create') }}">
                                         <button class="btn btn-primary" type="button" aria-expanded="false">Add Employee
                                         </button>
                                     </a>
@@ -37,13 +37,13 @@
 
                 <div class="row">
                     <div class="col-xl-12">
-                        <form action="{{ route('admin.employee.search') }}" method="GET">
+                        <form action="{{ route('employee.search') }}" method="GET">
                             <div class="col-md-3 mt-1 float-left ">
                                 <input type="text" class="form-control" name="search" placeholder="Search..." />
                             </div>
                             <div class="float-left m-1">
                                 <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">Submit</button>
-                                <a class="m-1" href="{{ route('admin.employee.index') }}"><button type="button"
+                                <a class="m-1" href="{{ route('employee.index') }}"><button type="button"
                                         class="btn btn-primary waves-effect waves-light mr-1"><i
                                             class="mdi mdi-refresh"></i>Reset
                                     </button></a>
@@ -95,9 +95,9 @@
                                                 </td>
 
                                                 <td>
-                                                    <a href="{{ route('admin.employee.edit', $item->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                                    <a href="{{ route('employee.edit', $item->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
 
-                                                    <a href="{{ route('admin.employee.delete', $item->id) }}" class="btn btn-danger">
+                                                    <a href="{{ route('employee.delete', $item->id) }}" class="btn btn-danger">
                                                     <i class="fa fa-trash"></i></a>
                                                 </td>
                                                 @endif
@@ -159,7 +159,7 @@
                 $.ajax({
                     type: "GET",
                     dataType: "json",
-                    url: '{{ route('admin.employee.change.status') }}',
+                    url: '{{ route('employee.change.status') }}',
                     data: {'status': status, 'id': Id },
                     success: function(data) {
                         toastr.options.closeButton = true;
