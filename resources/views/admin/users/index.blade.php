@@ -1,13 +1,12 @@
 @extends('admin.layouts.admin_main')
 @push('title')
     <title>Users Details</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.css">
+    <link href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
 @endpush
 @section('admin_main-section')
     <!-- Start right Content here -->
     <!-- ============================================================== -->
     <div class="main-content">
-
         <div class="page-content">
             <div class="container-fluid">
 
@@ -21,7 +20,6 @@
                             </ol>
                         </div>
                     </div>
-
 
                     <div class="col-sm-6">
                         <div class="float-right d-none d-md-block">
@@ -37,34 +35,43 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-xl-12">
-                        <form action="{{ route('users.index') }}" method="GET">
-                            <div class="col-md-3 mt-1 float-left ">
-                                <label for="">Search</label>
-                                <input type="text" class="form-control" name="search" placeholder="Search..." />
-                            </div>
+                <form action="{{ route('users.index') }}" method="GET">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                
+                                            <div class="col-md-2 mt-1 float-left">
+                                                <input class="form-control" name="search" type="text"
+                                                    placeholder="Search by number" data-toggle="tooltip" data-placement="top" data-original-title="Search Here..."/>
+                                            </div>
 
-                            <div class="col-md-3 mt-1 float-left ">
-                                <label for="">Start Date</label>
-                                <input type="date" name="start_date" class="form-control">
-                            </div>
+                                            <div class="col-md-2 mt-1 float-left">
+                                                <input class="form-control" name="start_date" type="date" data-toggle="tooltip" data-placement="top" data-original-title="Start Date"/>
+                                            </div>
 
-                            <div class="col-md-3 mt-1 float-left">
-                                <label for="">End Date</label>
-                                <input type="date" name="end_date" class="form-control">
+                                            <div class="col-md-2 mt-1 float-left">
+                                                <input class="form-control" name="end_date" type="date" data-toggle="tooltip" data-placement="top" data-original-title="End Date"/>
+                                            </div>
+                
+                                            <div class="col-lg-3 mt-6 float-left mt-1">
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">Submit
+                                                </button>
+                
+                                                <a href="{{route('users.index')}}"><button type="button" class="btn btn-primary waves-effect waves-light mr-1" data-toggle="tooltip" data-placement="top" title="" data-original-title="Clear Search Filters"><i class="mdi mdi-refresh"></i>Clear</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- row end -->
+                                </div>
                             </div>
-
-                            <div class="col-md-3 float-left" style="margin-top: 32px">
-                                <button type="submit" class="btn btn-primary waves-effect waves-light ">Submit</button>
-                                <a href="{{route('users.index')}}">
-                                    <button type="button" class="btn btn-primary waves-effect waves-light mr-1"><i class="mdi mdi-refresh"></i>Reset
-                                    </button>
-                                </a>
-                            </div>
-                        </form>
+                        </div>
                     </div>
-                </div>
+                </form>
+
                 @if (session()->has('success'))
                     <div class="alert alert-success">
                         {{ session()->get('success') }}
@@ -75,7 +82,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <table id="example" class="table table-striped table-bordered" style="width: 100%">
                                     <thead>
                                         <tr>
                                             <th>Sr.No.</th>
@@ -83,23 +90,18 @@
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Address</th>
-                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
-                                        @if (count($user_data) > 0)
-                                            <?php $i = 1; foreach($user_data as $user){?>
+                                        <?php $i = 1; foreach($user_data as $user){?>
                                             <tr>
                                                 <td>{{ $i }}</td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->phone }}</td>
                                                 <td>{{ $user->address }}</td>
-                                                <td>
-                                                    <input type="checkbox" data-id="{{ $user->id }}" name="status" class="js-switch" {{ $user->status == 'Active' ? 'checked' : '' }}>
-                                                </td>
                                                 <td>
                                                     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-success"><i class="fa fa-edit"></i></a>
                 
@@ -111,32 +113,9 @@
                                                 <?php $i++; ?>
                 
                                             </tr>
-                
-                                            <?php }?>
-                                        @else
-                                            <tr>
-                                                <th></th><th></th>
-                                                <th class="d-flex justify-content-center">No data found</th>
-                                            </tr>
-                                        @endif
+                                            <?php } ?>
                                     </tbody>
                                 </table>
-                                <div class="row align-items-center">
-                                    <div class="col-sm-6">
-                                        <div class="page-title-box">
-                                            {{ $user_data->firstItem() }} - {{ $user_data->lastItem() }} of {{ count($record) }} results
-                                        </div>
-                                    </div>
-                
-                                    <div class="col-sm-6">
-                                        <div class="float-right d-none d-md-block">
-                                            <div class="d-flex justify-content-center">
-                                                {!! $user_data->links() !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
                             </div>
                         </div>
                     </div> <!-- end col -->
@@ -147,39 +126,13 @@
         <!-- End Page-content -->
     </div>
     <!-- end main content-->
+   
 
+    <script src="{{asset('assets/js/jquery-3.7.0.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('assets/js/dataTables.bootstrap4.min.js')}}"></script>
+    <script>
+        $("#example").DataTable();
+    </script>
     
-    <!-- end main content-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/switchery/0.8.2/switchery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script>
-        let elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-        elems.forEach(function(html) {
-            let switchery = new Switchery(html, {
-                size: 'small'
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.js-switch').change(function() {
-                let status = $(this).prop('checked') === true ? 1 : 0;
-                let Id = $(this).data('id');
-                $.ajax({
-                    type: "GET",
-                    dataType: "json",
-                    url: '{{ route('users.change.status') }}',
-                    data: {'status': status, 'id': Id },
-                    success: function(data) {
-                        toastr.options.closeButton = true;
-                        toastr.options.closeMethod = 'fadeOut';
-                        toastr.options.closeDuration = 100;
-                        toastr.success(data.message);
-                    }
-                });
-            });
-        });
-    </script>
 @endsection
